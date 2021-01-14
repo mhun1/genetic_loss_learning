@@ -31,3 +31,19 @@ def plot_graph(expr):
     nx.draw_networkx_edges(g, pos)
     nx.draw_networkx_labels(g, pos, labels)
     plt.show()
+
+def weight_sample(individual, data):
+    x = data[0]
+    y = data[1]
+
+    #tree = PrimitiveTree(individual)
+    #tree.
+    func = gp.compile(expr=individual)
+
+    #print(type(func))
+    #print(individual)
+    pred = func(x, y)
+    label = objective(x, y)
+    loss = fitness(pred, label)
+    return loss,
+
